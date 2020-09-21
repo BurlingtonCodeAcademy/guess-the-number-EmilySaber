@@ -12,12 +12,6 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function getRandomIntt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-}
-
 start();
 
 async function start() {
@@ -27,10 +21,7 @@ async function start() {
   //let fInput = getRandomInt(100) // this is your first input variable
   let firstResponse = await ask("Is your number " + 50 + " ?" + "\nY/N "); // first attempt at guess
   let highOrLow = "Is it higher or lower?" //reusable 
-  //let min = 1
-  //let max = 100
-  //let sInput = getRandomInt(fInput) //this is the lesser than variable // NOT USING THIS RN MIGHT TAKE OUT
-  //let pInput = getRandomIntt(fInput, max) //this is the higher than variable // NOT USING THIS RN MIGHT TAKE OUT
+  
 
   if (firstResponse === "N") { //first logic here??
 
@@ -42,11 +33,6 @@ async function start() {
   }
 
   let nextQ = await ask("H/L ") // higher or lower than 50
-
-
-  // use of logical operator to cross compare secret number with guess ??
-
-
 
   if (nextQ == "L") {
     console.log("Is your number " + 25 + " ?")
@@ -179,8 +165,6 @@ async function start() {
             }
           }
         }
-
-
         else {
           (nextQ4 === "H")
           console.log("Is your number " + 10 + " ?")
